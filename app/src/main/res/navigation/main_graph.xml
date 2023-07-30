@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/izlenenFilmlerFragment">
+
+    <fragment
+        android:id="@+id/izlenenFilmlerFragment"
+        android:name="com.example.movieapp.ui.IzlenenFilmlerFragment"
+        android:label="fragment_izlenen_filmler"
+        tools:layout="@layout/fragment_izlenen_filmler" >
+        <action
+            android:id="@+id/izlenenToDetay"
+            app:destination="@id/filmDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/izlenecekFilmlerFragment"
+        android:name="com.example.movieapp.ui.IzlenecekFilmlerFragment"
+        android:label="fragment_izlenecek_filmler"
+        tools:layout="@layout/fragment_izlenecek_filmler" >
+        <action
+            android:id="@+id/izlenecekToDetay"
+            app:destination="@id/filmDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmDetayFragment"
+        android:name="com.example.movieapp.ui.FilmDetayFragment"
+        android:label="fragment_film_detay"
+        tools:layout="@layout/fragment_film_detay" >
+        <argument
+            android:name="film"
+            app:argType="com.example.movieapp.data.model.Film" />
+        <action
+            android:id="@+id/action_filmDetayFragment_to_izlenenFilmlerFragment"
+            app:destination="@id/izlenenFilmlerFragment" />
+    </fragment>
+</navigation>
